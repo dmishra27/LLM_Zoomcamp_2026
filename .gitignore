@@ -1,5 +1,5 @@
-.env
-_pycache__/
+__pycache__/
 .ipynb_checkpoints/
 .venv/
+.env
 .pyc
