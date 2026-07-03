@@ -1,5 +1,15 @@
+# Python
 __pycache__/
+*.pyc
+
+# Jupyter
 .ipynb_checkpoints/
+
+# Virtual environment
 .venv/
+
+# Environment variables
 .env
-.pyc
+
+# Downloaded embedding models
+models/
