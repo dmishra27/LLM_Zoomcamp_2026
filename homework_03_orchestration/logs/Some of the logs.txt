@@ -1,0 +1,205 @@
+2026-07-03 23:40:22.104
+zoomcamp
+4_simple_agent
+log_token_usage
+7dVojJKKDWjhfZRj5s58US
+📊 Token Usage Summary:
+Multilingual Agent:
+- Input tokens: 282
+- Output tokens: 73
+- Total tokens: 355
+English Brevity Agent:
+- Input tokens: 88
+- Output tokens: 68
+- Total tokens: 156
+💡 Tip: Monitor token usage to understand costs and optimize prompts!
+2026-07-03 23:27:52.305
+zoomcamp
+4_simple_agent
+log_token_usage
+1bCMQUepFdZ5hu4onuXNTj
+📊 Token Usage Summary:
+Multilingual Agent:
+- Input tokens: 282
+- Output tokens: 86
+- Total tokens: 368
+English Brevity Agent:
+- Input tokens: 101
+- Output tokens: 44
+- Total tokens: 145
+💡 Tip: Monitor token usage to understand costs and optimize prompts!
+2026-07-03 23:25:40.892
+zoomcamp
+4_simple_agent
+log_token_usage
+3giUWtefQCEdp8uqZIVnh5
+📊 Token Usage Summary:
+Multilingual Agent:
+- Input tokens: 282
+- Output tokens: 195
+- Total tokens: 477
+English Brevity Agent:
+- Input tokens: 210
+- Output tokens: 53
+- Total tokens: 263
+💡 Tip: Monitor token usage to understand costs and optimize prompts!
+2026-07-03 23:20:55.942
+zoomcamp
+4_simple_agent
+log_token_usage
+5fqmjmzTYvB2o8bMSXLwLU
+📊 Token Usage Summary:
+Multilingual Agent:
+- Input tokens: 282
+- Output tokens: 172
+- Total tokens: 454
+English Brevity Agent:
+- Input tokens: 187
+- Output tokens: 45
+- Total tokens: 232
+💡 Tip: Monitor token usage to understand costs and optimize prompts!
+2026-07-03 23:06:12.011
+zoomcamp
+6_multi_agent_research
+parse_results
+5WzXjLUWAUqIqTRqutAeT8
+🎯 Competitive Intelligence Report
+=====================================
+Company: Kestra
+Summary: Kestra is an open-source orchestration platform designed to help teams build, run, and govern workflows across data, AI, infrastructure, and business. It emphasizes an 'Everything-as-Code' approach, complemented by a user interface and AI capabilities like a Production AI Copilot and Agentic Orchestration. Founded in 2022, Kestra has experienced rapid growth in adoption and workflow volume.
+Recent News:
+- Kestra Secures $8 Million Seed Funding (October 23, 2024)
+Kestra successfully closed an $8 million seed funding round, contributing to its total funding across two rounds and supporting its rapid expansion.
+- 10x Year-over-Year Growth in Adoption and Workflow Volume (Late 2024 (inferred))
+Kestra has achieved significant growth, reporting a tenfold increase in platform adoption and workflow volume on a year-over-year basis, indicating strong market acceptance.
+- Introduction of Production AI Copilot and Agentic Orchestration (2024 (inferred))
+Kestra has enhanced its platform with advanced AI features, including a Production AI Copilot and Agentic Orchestration, to streamline workflow management and development.
+Competitors:
+- Apache Airflow
+- Prefect
+- Dagster
+- Temporal Technologies
+📊 System Performance:
+- Main agent tokens: 1299
+💡 Multi-Agent Pattern:
+This demonstrates how the main analyst agent delegated the research
+work to a specialized research agent, achieving modularity and
+separation of concerns.
+2026-07-03 23:03:53.156
+zoomcamp
+5_web_research_agent
+log_report
+iv4yHDiLxG46RxdR5zb8o
+✅ Research completed!
+📄 Report saved to: kestra:///zoomcamp/5-web-research-agent/executions/iv4yHDiLxG46RxdR5zb8o/tasks/research-agent/1LjNFkG58suDjgsIBIWaEQ/2dr0Q6KgGObTpeHK3iM3Mj-research_report.md
+🔍 Agent made autonomous decisions about:
+- Which searches to perform
+- How many searches were needed
+- How to structure the report
+- When the task was complete
+📊 Token usage: 5203 tokens
+💡 This demonstrates the power of AI agents: you specified the GOAL,
+the agent figured out the HOW!
+
+
+RAG Response (with retrieved context):
+Kestra 1.1 introduced several major features. Here are at least 5 with brief descriptions:
+1. **New Filters**: Redesigned UI filters for improved usability, offering explicit filter options, single-click resets, saved filter combinations, and customizable table columns.
+2. **No-Code Dashboard Editor**: Allows users to create and edit multi-panel dashboards directly from the UI without writing code, using a visual editor.
+3. **Multi-Agent AI Systems**: AI agents can now use other AI agents as tools, enabling the creation of sophisticated multi-agent orchestration workflows where a primary agent delegates tasks to specialized expert agents.
+4. **Fix with AI**: Provides AI-powered suggestions to help diagnose and resolve issues when task runs fail, offering intelligent recommendations for fixes.
+5. **Human Task**: Introduces human-in-the-loop workflows, allowing executions to be paused and resumed only after manual approval by specific users or groups, enabling validation steps in critical workflows (Enterprise Edition).
+6. **Improved Air-Gapped Support**: Enhanced support for offline environments, with the UI adapting to run without internet connectivity by fetching blueprints locally, hiding external embeds, and using local fonts.
+7. **Dozens of New Plugins**: Expanded integration capabilities with new plugins for various services, including Liquibase, dlt, Airtable, Flink, Stripe, YouTube, Odoo, and many more.
+🎉 Note that this response is detailed, accurate, and grounded in the actual release documentation. Compare this with the output from 1_chat_without_rag.yaml!
+2026-07-03 21:00:28.342
+zoomcamp
+1_chat_without_rag
+log_results
+3gnBZZLcMZLUvmsx3E1MNn
+❌ Response WITHOUT RAG (no retrieved context):
+Kestra 1.1 introduced several exciting features that significantly enhanced its capabilities and user experience. Here are at least 5 major features with brief descriptions:
+1. **New Flow & Task Editor:** This was a major overhaul of the user interface for creating and editing flows and tasks. Instead of just a raw YAML editor, Kestra 1.1 introduced a more intuitive and user-friendly visual editor. This included features like:
+* **Drag-and-drop functionality:** To easily add and arrange tasks.
+* **Contextual help and autocompletion:** Guiding users through task properties and configurations.
+* **YAML synchronization:** Allowing users to switch between the visual editor and the underlying YAML, providing flexibility for both beginners and advanced users.
+* **Improved error highlighting:** Making it easier to identify and fix issues in flow definitions.
+2. **Plugin Management UI:** Kestra 1.1 brought a dedicated user interface for managing plugins. Before this, plugin installation and management were primarily done through configuration files and manual deployment. The new UI allowed users to:
+* **Browse available plugins:** See what plugins are installed and what's available.
+* **Install/Uninstall plugins:** Directly through the Kestra UI (though this might still involve backend configuration for the actual JAR files, the UI provided a centralized view and control).
+* **View plugin details:** Understand the tasks and capabilities offered by each plugin.
+* **Manage plugin versions:** Helping ensure compatibility and keep track of updates.
+3. **Authentication & Authorization Improvements:** Kestra 1.1 significantly enhanced its security features by introducing more robust authentication and authorization mechanisms. This included:
+* **Namespace-level permissions:** Allowing administrators to define granular access control based on namespaces, meaning different teams or users could only see and interact with flows within their assigned namespaces.
+* **Role-Based Access Control (RBAC) foundation:** Laying the groundwork for more sophisticated role management, enabling the assignment of specific roles (e.g., viewer, editor, admin) to users or groups.
+* **Improved integration with external identity providers:** Streamlining the process of connecting Kestra with existing authentication systems.
+4. **Enhanced Scheduling Capabilities (Cron and Interval Improvements):** Kestra 1.1 refined its scheduling mechanisms, offering more flexibility and reliability for automated workflows. Key improvements included:
+* **More robust Cron scheduling:** Better handling of complex Cron expressions and edge cases.
+* **Improved interval-based scheduling:** Ensuring more precise execution at defined intervals.
+* **Visual feedback for schedules:** Making it easier to understand when flows are expected to run.
+* **Better handling of missed schedules:** Providing options for catching up on missed executions or skipping them based on configuration.
+5. **Better Error Handling and Recovery for Flows:** Kestra 1.1 introduced features to make flows more resilient to failures and easier to debug. This included:
+* **Improved retry mechanisms:** More granular control over task retries (e.g., exponential backoff, specific retry conditions).
+* **Enhanced error reporting:** Providing more detailed error messages and stack traces to pinpoint the root cause of failures.
+* **Conditional error handling:** Allowing users to define specific actions or branches to take when certain errors occur.
+* **Improved visibility into failed tasks:** Making it easier to identify and inspect failed tasks within the UI.
+🤔 Did you notice that this response seems to be:
+- Incorrect?
+- Vague/generic?
+- Listing features that haven't been added in exactly this version but rather a long time ago?
+👉 This is why context matters! Run `2_chat_with_rag.yaml` to see the accurate, context-grounded response.
+
+
+
+
+2026-07-03 21:16:59.166
+zoomcamp
+2_chat_with_rag
+log_results
+4GYmrjV7nheIWjwrRhfxeI
+✅ RAG Response (with retrieved context):
+Kestra 1.1 introduced several major features. Here are at least 5 with brief descriptions:
+1. **New Filters**: Redesigned UI filters for improved usability, offering explicit filter options, single-click resets, saved filter combinations, and customizable table columns.
+2. **No-Code Dashboard Editor**: Allows users to create and edit multi-panel dashboards directly from the UI without writing code, using a visual editor.
+3. **Multi-Agent AI Systems**: AI agents can now use other AI agents as tools, enabling the creation of sophisticated multi-agent orchestration workflows where a primary agent delegates tasks to specialized expert agents.
+4. **Fix with AI**: Provides AI-powered suggestions to help diagnose and resolve issues when task runs fail, offering intelligent recommendations for fixes.
+5. **Human Task**: Introduces human-in-the-loop workflows, allowing executions to be paused and resumed only after manual approval by specific users or groups, enabling validation steps in critical workflows (Enterprise Edition).
+6. **Improved Air-Gapped Support**: Enhanced support for offline environments, with the UI adapting to run without internet connectivity by fetching blueprints locally, hiding external embeds, and using local fonts.
+7. **Dozens of New Plugins**: Expanded integration capabilities with new plugins for various services, including Liquibase, dlt, Airtable, Flink, Stripe, YouTube, Odoo, and many more.
+🎉 Note that this response is detailed, accurate, and grounded in the actual release documentation. Compare this with the output from 1_chat_without_rag.yaml!
+2026-07-03 21:00:28.342
+zoomcamp
+1_chat_without_rag
+log_results
+3gnBZZLcMZLUvmsx3E1MNn
+❌ Response WITHOUT RAG (no retrieved context):
+Kestra 1.1 introduced several exciting features that significantly enhanced its capabilities and user experience. Here are at least 5 major features with brief descriptions:
+1. **New Flow & Task Editor:** This was a major overhaul of the user interface for creating and editing flows and tasks. Instead of just a raw YAML editor, Kestra 1.1 introduced a more intuitive and user-friendly visual editor. This included features like:
+* **Drag-and-drop functionality:** To easily add and arrange tasks.
+* **Contextual help and autocompletion:** Guiding users through task properties and configurations.
+* **YAML synchronization:** Allowing users to switch between the visual editor and the underlying YAML, providing flexibility for both beginners and advanced users.
+* **Improved error highlighting:** Making it easier to identify and fix issues in flow definitions.
+2. **Plugin Management UI:** Kestra 1.1 brought a dedicated user interface for managing plugins. Before this, plugin installation and management were primarily done through configuration files and manual deployment. The new UI allowed users to:
+* **Browse available plugins:** See what plugins are installed and what's available.
+* **Install/Uninstall plugins:** Directly through the Kestra UI (though this might still involve backend configuration for the actual JAR files, the UI provided a centralized view and control).
+* **View plugin details:** Understand the tasks and capabilities offered by each plugin.
+* **Manage plugin versions:** Helping ensure compatibility and keep track of updates.
+3. **Authentication & Authorization Improvements:** Kestra 1.1 significantly enhanced its security features by introducing more robust authentication and authorization mechanisms. This included:
+* **Namespace-level permissions:** Allowing administrators to define granular access control based on namespaces, meaning different teams or users could only see and interact with flows within their assigned namespaces.
+* **Role-Based Access Control (RBAC) foundation:** Laying the groundwork for more sophisticated role management, enabling the assignment of specific roles (e.g., viewer, editor, admin) to users or groups.
+* **Improved integration with external identity providers:** Streamlining the process of connecting Kestra with existing authentication systems.
+4. **Enhanced Scheduling Capabilities (Cron and Interval Improvements):** Kestra 1.1 refined its scheduling mechanisms, offering more flexibility and reliability for automated workflows. Key improvements included:
+* **More robust Cron scheduling:** Better handling of complex Cron expressions and edge cases.
+* **Improved interval-based scheduling:** Ensuring more precise execution at defined intervals.
+* **Visual feedback for schedules:** Making it easier to understand when flows are expected to run.
+* **Better handling of missed schedules:** Providing options for catching up on missed executions or skipping them based on configuration.
+5. **Better Error Handling and Recovery for Flows:** Kestra 1.1 introduced features to make flows more resilient to failures and easier to debug. This included:
+* **Improved retry mechanisms:** More granular control over task retries (e.g., exponential backoff, specific retry conditions).
+* **Enhanced error reporting:** Providing more detailed error messages and stack traces to pinpoint the root cause of failures.
+* **Conditional error handling:** Allowing users to define specific actions or branches to take when certain errors occur.
+* **Improved visibility into failed tasks:** Making it easier to identify and inspect failed tasks within the UI.
+🤔 Did you notice that this response seems to be:
+- Incorrect?
+- Vague/generic?
+- Listing features that haven't been added in exactly this version but rather a long time ago?
+👉 This is why context matters! Run `2_chat_with_rag.yaml` to see the accurate, context-grounded response.
