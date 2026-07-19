@@ -1,16 +1,23 @@
 import sqlite3
+import pandas as pd
 
 conn = sqlite3.connect("traces.db")
-cursor = conn.cursor()
 
-cursor.execute("SELECT COUNT(*) FROM spans")
-print("Number of spans:", cursor.fetchone()[0])
-
-cursor.execute("SELECT * FROM spans")
-rows = cursor.fetchall()
-
-print("\nRows:")
-for row in rows:
-    print(row)
+df = pd.read_sql_query("""
+SELECT
+    name,
+    input_tokens,
+    output_tokens
+FROM spans
+WHERE name = 'llm'
+""", conn)
 
 conn.close()
+
+print(df)
+
+print("\nInput tokens:")
+print(df["input_tokens"])
+
+print("\nStatistics:")
+print(df["input_tokens"].describe())

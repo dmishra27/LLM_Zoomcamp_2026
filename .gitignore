@@ -5,11 +5,18 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Virtual environment
+# Virtual environments
 .venv/
 
 # Environment variables
 .env
 
+# Local SQLite database
+traces.db
+
 # Downloaded embedding models
 models/
+
+# OS files
+.DS_Store
+Thumbs.db
