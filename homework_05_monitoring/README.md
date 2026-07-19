@@ -1,85 +1,81 @@
-# LLM Zoomcamp 2026 – Homework 5: Monitoring
+# LLM Zoomcamp 2026 – Homework 5: Monitoring with OpenTelemetry
 
 ## Overview
 
-This project implements the Monitoring module from **DataTalksClub LLM Zoomcamp 2026**.
+This project implements the **Monitoring** module from **DataTalksClub LLM Zoomcamp 2026**.
 
-Unlike the previous modules that focused on Retrieval-Augmented Generation (RAG) development and offline evaluation, this module introduces **production monitoring and observability** for LLM-powered applications.
+Building on the Retrieval-Augmented Generation (RAG) application developed in previous homeworks, this project introduces **observability** using **OpenTelemetry (OTel)**. The RAG pipeline is instrumented with distributed tracing to monitor execution flow, measure latency, and record LLM token usage.
 
-The goal is to understand how a RAG application behaves once real users begin interacting with it by collecting runtime metrics, storing conversations, capturing user feedback, and visualising system performance through monitoring dashboards.
-
----
-
-# Problem Statement
-
-Offline evaluation provides useful benchmarks, but it cannot fully capture how an AI application performs in production.
-
-Once deployed, important operational questions arise:
-
-- How many requests are being processed?
-- How much does each LLM call cost?
-- How long do responses take?
-- Which conversations receive negative feedback?
-- How can poor responses be identified and investigated?
-
-This project addresses these challenges by building a monitoring pipeline for a Retrieval-Augmented Generation application.
+Instead of using a production observability backend such as Jaeger or Grafana Tempo, this homework implements a **custom SQLite span exporter** to understand how OpenTelemetry works internally. The captured traces are stored in a SQLite database and analysed using SQL and Pandas.
 
 ---
 
-# Learning Objectives
+# Project Objectives
 
 The objectives of this homework are to:
 
-- Build an interactive Streamlit chat application
-- Capture traces and runtime metrics
-- Monitor OpenAI token usage and cost
-- Store conversations in PostgreSQL
-- Collect user feedback
-- Build monitoring dashboards
-- Explore production observability for LLM applications
+- Instrument an existing RAG application using OpenTelemetry.
+- Create nested spans representing different stages of the RAG pipeline.
+- Capture execution timing and token usage.
+- Export trace data into SQLite.
+- Analyse trace data using SQL and Pandas.
+- Understand the foundations of production observability for AI systems.
 
 ---
 
-# Current Status
+# Implemented Components
 
-> **Project Status:** 🚧 In Progress
+The completed implementation includes:
 
-This repository is being developed incrementally while following the LLM Zoomcamp Monitoring module.
-
-The README and findings document will be updated as additional components are implemented.
+- OpenTelemetry instrumentation
+- Custom `SQLiteSpanExporter`
+- SQLite trace database (`traces.db`)
+- Nested spans:
+  - `rag`
+  - `search`
+  - `llm`
+- Input and output token monitoring
+- SQL-based trace analysis
+- Pandas-based token analysis
+- Performance measurement of RAG execution
 
 ---
 
-# Planned Components
+# Architecture
 
-The completed project is expected to include:
-
-- Streamlit Chat Application
-- RAG Assistant
-- Runtime Metrics Collection
-- PostgreSQL Conversation Storage
-- Streamlit Dashboard
-- Grafana Dashboard
-- User Feedback Collection
-- LLM-as-a-Judge Evaluation
-- Synthetic Data Generation
-- Docker Compose Deployment
+```
+                    User Query
+                         │
+                         ▼
+                  RAG Pipeline
+                         │
+        ┌────────────────┼────────────────┐
+        ▼                ▼                ▼
+      rag             search            llm
+                                           │
+                                           ▼
+                                OpenTelemetry Spans
+                                           │
+                                           ▼
+                               SQLiteSpanExporter
+                                           │
+                                           ▼
+                                     traces.db
+                                           │
+                                           ▼
+                           SQL / Pandas Trace Analysis
+```
 
 ---
 
 # Technologies
 
-The project is expected to use:
-
 - Python 3.12
-- Streamlit
 - OpenAI API
-- PostgreSQL
-- Docker
-- Docker Compose
-- Grafana
-
-Additional libraries will be added as the implementation progresses.
+- OpenTelemetry
+- SQLite
+- Pandas
+- uv
 
 ---
 
@@ -88,29 +84,80 @@ Additional libraries will be added as the implementation progresses.
 ```
 homework_05_monitoring/
 │
+├── analyse_traces.py
+├── FINDINGS.md
 ├── README.md
-└── FINDINGS.md
+├── ingest.py
+├── rag_helper.py
+├── starter.py
+└── Makefile
 ```
 
-Additional source code, configuration files, dashboards, and screenshots will be added as development progresses.
+> Local development files such as `.env`, `traces.db`, `__pycache__/`, and virtual environments are excluded from version control using `.gitignore`.
+
+---
+
+# Key Results
+
+The monitoring implementation produced the following observations:
+
+- Three nested spans were successfully captured:
+  - `rag`
+  - `search`
+  - `llm`
+- Average LLM latency was significantly higher than retrieval latency.
+- Input token counts remained identical across repeated executions of the same query, indicating deterministic retrieval.
+- Trace data was successfully exported into SQLite for downstream analysis.
 
 ---
 
 # Documentation
 
-This homework contains two complementary documents.
+This project contains two complementary documents.
 
-| File | Purpose |
-|------|---------|
-| README.md | Project overview, setup, architecture and implementation summary |
-| FINDINGS.md | Experimental observations, homework answers, lessons learned and reflections |
+| File | Description |
+|------|-------------|
+| **README.md** | Project overview, architecture, implementation summary and setup |
+| **FINDINGS.md** | Technical implementation details, homework answers, debugging notes, observations, and key learnings |
+
+---
+
+# Learning Outcomes
+
+This homework introduced several important observability concepts:
+
+- Distributed tracing using OpenTelemetry
+- Span hierarchy and execution flow
+- Runtime latency measurement
+- Token usage monitoring
+- Custom trace exporters
+- Trace analysis using SQL and Pandas
+
+These concepts form the basis of production monitoring for modern LLM-powered applications.
+
+---
+
+# Relationship to Previous Homeworks
+
+This homework completes the first stage of the LLM Zoomcamp learning journey.
+
+| Homework | Focus |
+|----------|-------|
+| Homework 1 | Retrieval |
+| Homework 2 | Retrieval-Augmented Generation (RAG) |
+| Homework 3 | Evaluation |
+| Homework 4 | Agentic AI |
+| Homework 5 | Monitoring and Observability |
+
+Together, these projects demonstrate the lifecycle of a production-ready LLM application—from retrieving knowledge and generating grounded responses to evaluating quality, orchestrating autonomous workflows, and monitoring runtime behaviour.
 
 ---
 
 # References
 
-- DataTalksClub LLM Zoomcamp 2026
+- DataTalksClub – LLM Zoomcamp 2026
 - Module 5 – Monitoring
+- OpenTelemetry Documentation
 
 ---
 
@@ -118,6 +165,6 @@ This homework contains two complementary documents.
 
 **Debabrata Mishra**
 
-MSc Data Science – University of Glasgow
+ACM SIGIR July 2024 Paper "Neural Passage Quality Estimation for Static Pruning" Co-author 
 
 LLM Zoomcamp 2026

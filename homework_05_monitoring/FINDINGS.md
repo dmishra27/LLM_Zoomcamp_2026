@@ -122,7 +122,7 @@ CREATE TABLE spans(
 )
 ```
 
-This effectively converts runtime traces into structured data that can later be queried using SQL or analysed with Pandas.
+This effectively converts runtime telemetry into structured trace data that can later be queried using SQL or analysed with Pandas for performance analysis and debugging.
 
 ---
 
@@ -586,3 +586,5 @@ This homework demonstrated that building an AI application does not end once the
 By manually instrumenting the RAG pipeline with OpenTelemetry, exporting traces to SQLite, and analysing latency and token usage, I gained practical experience with observability concepts that underpin modern AI systems. Although this exercise used a lightweight SQLite exporter, the same principles extend directly to enterprise observability platforms such as Jaeger, Grafana Tempo, and cloud-native monitoring solutions.
 
 Across the five homeworks, the course progressed from retrieval and generation to evaluation, autonomous agents and finally monitoring, illustrating the complete lifecycle of a modern LLM application. This progression highlights that successful AI engineering requires not only accurate models, but also robust retrieval, systematic evaluation, intelligent orchestration and comprehensive observability to deliver reliable, scalable and maintainable production systems.
+
+This progression reflects the evolution from building an LLM application that simply works to engineering one that is observable, measurable, maintainable, and ultimately suitable for production deployment.
